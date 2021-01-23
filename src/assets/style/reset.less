@@ -63,3 +63,36 @@ html,body,#root{
     transform: scale(0.33333);
   }
 }
+
+
+.topborder{
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    transform-origin: 0 0;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #000;
+  }
+}
+@media screen and (-webkit-max-device-pixel-ratio:1.49) {
+  .topborder::before {
+    width: 100%;
+    transform: scale(1);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:1.49) and (-webkit-max-device-pixel-ratio:2.49) {
+  .topborder::before {
+    width: 200%;
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:2.49) {
+  .topborder::before {
+    width: 300%;
+    transform: scale(0.33333);
+  }
+}
